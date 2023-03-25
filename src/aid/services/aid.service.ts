@@ -40,7 +40,7 @@ export class AidService {
     }
 
     async validatePatient(aid: Aid, @Request() req): Promise<any> {
-        return this.http.get('https://puente-solidaridad-patient.herokuapp.com/v1/patient/' + aid.patientId, {
+        return this.http.get('https://puente-solidaridad-patients.herokuapp.com/v1/patient/' + aid.patientId, {
             headers: {
                 'Authorization': req.headers.authorization,
             }  
@@ -51,7 +51,7 @@ export class AidService {
     }
 
     async validatePhysician(aid: Aid, @Request() req): Promise<any> {
-        return this.http.get('https://puente-solidaridad-physician.herokuapp.com/v1/physician/' + aid.physicianId, {
+        return this.http.get('https://puente-solidaridad-physicians.herokuapp.com/v1/physician/' + aid.physicianId, {
             headers: {
                 'Authorization': req.headers.authorization,
             }  
